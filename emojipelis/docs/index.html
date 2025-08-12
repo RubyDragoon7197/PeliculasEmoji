@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EmojiPelis – Adivina la película</title>
+  <meta name="description" content="Juego para adivinar películas de animación con emojis. HTML, CSS y JS. Listo para Capacitor." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="icon.png" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="brand">
+        <div class="logo">🎬</div>
+        <div>
+          <h1>EmojiPelis — Adivina la película</h1>
+          <div class="small">Películas de animación (¡en español o inglés!)</div>
+        </div>
+      </div>
+      <div class="best">🏆 Récord: <span id="bestScore">0</span></div>
+    </header>
+
+    <section class="card">
+      <div class="emoji-box" id="emojiBox">🍿❓</div>
+
+      <div class="controls">
+        <input id="answer" type="text" placeholder="Escribe el título…" autocomplete="off" />
+        <button class="btn" id="btnCheck">Comprobar</button>
+      </div>
+
+      <div class="meta">
+        <div class="score">
+          <span class="chip">Puntos: <span id="score">0</span></span>
+          <span class="chip">Ronda: <span id="round">1</span>/<span id="total">10</span></span>
+          <span class="chip" title="Vidas">❤ <span id="lives">3</span></span>
+        </div>
+        <div>
+          <button class="btn secondary" id="btnHint">Pista</button>
+          <button class="btn ghost" id="btnSkip">Saltar</button>
+        </div>
+      </div>
+
+      <div id="feedback" class="feedback"></div>
+
+      <div class="footer">
+        <button class="btn" id="btnNext" style="display:none">Siguiente</button>
+        <div class="small">Consejo: escribe sin tildes; se aceptan variaciones comunes (por ejemplo, "El Rey León" ó "The Lion King").</div>
+      </div>
+    </section>
+
+    <p class="small" style="margin-top:14px">Hecho con ❤ </p>
+  </div>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
