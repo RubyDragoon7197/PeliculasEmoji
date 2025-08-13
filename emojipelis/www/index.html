@@ -1,42 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Juego para adivinar películas de animación con emojis. HTML, CSS y JS.">
-  <title>EmojiPelis</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>EmojiPelis – Adivina la película</title>
+  <meta name="description" content="Juego divertido para adivinar películas de animación usando emojis. Hecho con HTML, CSS y JS. Listo para Capacitor." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="icon" href="icon.png" />
 </head>
 <body>
   <div class="app">
-    <h1>🎬 EmojiPelis 🎬</h1>
+    <header>
+      <div class="brand">
+        <div class="logo">🎬</div>
+        <div>
+          <h1>EmojiPelis — Adivina la película</h1>
+          <div class="small">Películas de animación (¡en español o inglés!)</div>
+        </div>
+      </div>
+      <div class="best">🏆 Récord: <span id="bestScore">0</span></div>
+    </header>
 
-    <div id="emoji-display">🍎👸🏻</div>
+    <section class="card">
+      <div class="emoji-box" id="emojiBox">🍿❓</div>
 
-    <input type="text" id="answer" placeholder="Escribe tu respuesta...">
-    <button id="check">Comprobar</button>
+      <div class="controls">
+        <input id="answer" type="text" placeholder="Escribe el título…" autocomplete="off" />
+        <button class="btn" id="btnCheck">Comprobar</button>
+      </div>
 
-    <div class="stats">
-      <span>Puntos: <span id="score">0</span></span>
-      <span>Ronda: <span id="round">1</span>/10</span>
-      <span>❤️ <span id="lives">3</span></span>
-    </div>
+      <div class="meta">
+        <div class="score">
+          <span class="chip">Puntos: <span id="score">0</span></span>
+          <span class="chip">Ronda: <span id="round">1</span>/<span id="total">10</span></span>
+          <span class="chip" title="Vidas">❤️ <span id="lives">3</span></span>
+        </div>
+        <div>
+          <button class="btn secondary" id="btnHint">Pista</button>
+          <button class="btn ghost" id="btnSkip">Saltar</button>
+        </div>
+      </div>
 
-    <div class="controls">
-      <button id="hint">Pista</button>
-      <button id="skip">Saltar</button>
-    </div>
+      <div id="feedback" class="feedback"></div>
 
-    <p class="tip">
-      Consejo: escribe sin tildes, se aceptan variaciones comunes (por ejemplo, "El rey Leon" o "The Lion King").
-    </p>
+      <div class="footer">
+        <button class="btn" id="btnNext" style="display:none">Siguiente</button>
+        <div class="small">Consejo: escribe sin tildes; se aceptan variaciones comunes (por ejemplo, "El Rey León" ó "The Lion King").</div>
+      </div>
+    </section>
 
-    <footer>
-      Hecho con ❤️
-    </footer>
+    <p class="small" style="margin-top:14px">Hecho con ❤️ en HTML, CSS y JS. Optimizada para móvil y lista para Capacitor.</p>
   </div>
 
-  <script src="/emojipelis/www/app.js" defer></script>
+  <script src="./app.js" defer></script>
 </body>
 </html>
