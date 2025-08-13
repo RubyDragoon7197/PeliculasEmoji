@@ -10,6 +10,9 @@
   --warning: #ffb703;
   --shadow: 0 10px 30px rgba(0,0,0,.35);
   --radius: 22px;
+
+  /* NUEVO: margen seguro bajo la barra de estado (Android/iOS) */
+  --safe-top: env(safe-area-inset-top, 0px);
 }
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -19,7 +22,11 @@ body{
               radial-gradient(800px 400px at -10% 120%, rgba(38,214,209,.18), transparent),
               var(--bg);
   color:var(--text);
-  display:flex; align-items:center; justify-content:center; padding:20px;
+
+  /* CAMBIO: inicia desde arriba y respeta el área segura */
+  display:flex; align-items:flex-start; justify-content:center;
+  min-height:100svh;
+  padding: calc(var(--safe-top) + 16px) 20px 24px;
 }
 .app{ width:100%; max-width: 880px; }
 header{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:18px; }
